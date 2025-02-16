@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Documents;
 use Illuminate\Support\Facades\DB;
+use setasign\Fpdi\Tcpdf\Fpdi;
 
 class DocumentStatusController extends Component
 {
@@ -46,10 +47,27 @@ class DocumentStatusController extends Component
         return redirect()->back();
     }
 
-    public function reject($id)
+    public function annotate($id)
     {
         $document = Documents::find($id);
         $document->document_status_id = 3;
+        $document->save();
+
+        $document_student = DB::table('document_student')
+            ->where('document_id', '=', "{$id}")
+            ->select('id', 'document_id', 'student_id')
+            ->first();
+
+        $file_name = "{$document_student->id}{$document_student->document_id}{$document_student->student_id}";
+        $file_path = public_path("files/{$file_name}");
+
+        return redirect()->back();
+    }
+
+    public function reject($id)
+    {
+        $document = Documents::find($id);
+        $document->document_status_id = 4;
         $document->save();
 
         return redirect()->back();
