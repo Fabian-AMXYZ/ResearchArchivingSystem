@@ -12,6 +12,7 @@ class DocumentStatusSeeder extends Seeder
         $statuses = [
             'Pending',
             'Approved',
+            'Annotated',
             'Rejected'
         ];
 

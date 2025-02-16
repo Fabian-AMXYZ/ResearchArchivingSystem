@@ -42,6 +42,7 @@
                     @if($item->document_status_id == 1)
                     <a href="{{ route('download-document', ['id' => $item->id]) }}" class="bg-blue-500 text-white py-1 px-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-300">Download</a>
                     <a href="{{ route('approve-documents', ['id' => $item->id]) }}" class="bg-green-500 text-white py-1 px-3 rounded focus:outline-none focus:ring-2 focus:ring-green-300">Approve</a>
+                    <a href="{{ route('annotate-documents', ['id' => $item->id]) }}" class="bg-yellow-500 text-white py-1 px-3 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300">Annotate</a>
                     <a href="{{ route('reject-documents', ['id' => $item->id]) }}" class="bg-red-500 text-white py-1 px-3 rounded focus:outline-none focus:ring-2 focus:ring-red-300">Reject</a>
                     @endif
                 </div>

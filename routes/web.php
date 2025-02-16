@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DocumentStudentController::class, 'setTable'])->name('faculty-dashboard');
     Route::get('/documents/download/{id}', [DocumentStatusController::class, 'download'])->name('download-document');
     Route::get('/documents/approve/{id}', [DocumentStatusController::class, 'approve'])->name('approve-documents');
+    Route::get('/documents/annotate/{id}', [DocumentStatusController::class, 'annotate'])->name('annotate-documents');
     Route::get('/documents/reject/{id}', [DocumentStatusController::class, 'reject'])->name('reject-documents');
 });
 

@@ -28,6 +28,7 @@ $faculties = DB::table('faculty')
             <th class="py-2 px-4 border-b">Status</th>
             <th class="py-2 px-4 border-b">First Name</th>
             <th class="py-2 px-4 border-b">Last Name</th>
+            <th class="py-2 px-4 border-b">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -54,7 +55,7 @@ $faculties = DB::table('faculty')
                 {{ $item->field_topic }}
             </td>
             <td class="py-2 px-4 border-b md:border-none text-center block md:table-cell">
-                <span class="md:hidden font-bold">Name:
+                <span class="md:hidden font-bold">Status:
                 </span>
                 {{ $item->name }}
             </td>
@@ -67,6 +68,10 @@ $faculties = DB::table('faculty')
                 <span class="md:hidden font-bold">Last Name:
                 </span>
                 {{ $item->last_name }}
+            </td>
+            <td class="py-2 px-4 border-b md:border-none text-center block md:table-cell">
+                <span class="md:hidden font-bold">Actions: 
+                </span>
             </td>
         </tr>
         <tr class="block md:hidden">
